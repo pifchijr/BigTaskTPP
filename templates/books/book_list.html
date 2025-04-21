@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Все книги</h2>
+  {% for book in books %}
+    <div>
+      <img src="{{ book.cover.url }}" height="200">
+      <h3>{{ book.title }}</h3>
+      <p><a href="{% url 'book_detail' book.pk %}">Подробнее</a></p>
+    </div>
+  {% endfor %}
+{% endblock %}
+
